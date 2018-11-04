@@ -128,6 +128,10 @@ Metalsmith(__dirname)
 - Meant for sites which will be hosted within a subdirectory of another site
 - For example, if the output of your Metalsmith build will be hosted at `http://example.com/base/` then links to `/base/dir/file.html` will be valid if `dir/file.html` exists in the metalsmith pipeline
 
+#### `exclude` (optional)
+
+- multimatch pattern of files in which links should not be checked, e.g. `['somedir/**/*']`
+
 ## History
 
 - **1.0.1** Add filenames to warnings

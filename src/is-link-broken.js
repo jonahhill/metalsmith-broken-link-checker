@@ -1,5 +1,6 @@
 const urijs = require("urijs")
 const path = require("path")
+const match = require('multimatch');
 
 module.exports = ({
   files,
@@ -13,6 +14,12 @@ module.exports = ({
   },
   options,
 }) => {
+
+  if (options.exclude) {
+    if (match(filename, options.exclude)[0]) {
+      return false;
+    }
+  }
   // Allow anchors before checking for a missing href
   if (options.allowAnchors && type === "anchor") {
     return false
